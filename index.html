@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Arcane Webswing Academy</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div id="speed-vignette"></div>
+
+  <div id="hud">
+    <div class="brand">ARCANE WEB // ACADEMY</div>
+    <div class="meter"><b id="speed">0</b><span>m/s</span></div>
+    <div class="webstate"><span id="left-state">L —</span><span id="right-state">R —</span></div>
+  </div>
+
+  <div id="reticle"><i></i><i></i><i></i><i></i></div>
+  <div id="notice"></div>
+
+  <div id="touch-ui">
+    <div id="stick-zone"><div id="stick-ring"></div><div id="stick-knob"></div></div>
+    <div class="touch-cluster webs">
+      <button class="web left" data-action="webLeft">L<br><small>WEB</small></button>
+      <button class="web right" data-action="webRight">R<br><small>WEB</small></button>
+    </div>
+    <div class="touch-cluster utility">
+      <button data-action="jump">JUMP</button>
+      <button data-action="reelIn">REEL +</button>
+      <button data-action="reelOut">REEL −</button>
+      <button data-action="zip">ZIP</button>
+      <button data-action="launch">POINT</button>
+      <button data-action="slingshot">SLING</button>
+    </div>
+  </div>
+
+  <div id="start-screen">
+    <div class="panel">
+      <div class="eyebrow">FIRST PLAYABLE // WEBSWING CORE</div>
+      <h1>ARCANE<br>WEBSWING<br><em>ACADEMY</em></h1>
+      <p>중앙 조준점으로 <b>실제 건물 표면</b>에 직접 웹을 쏜다.<br>좌우 웹은 완전 독립. 줄을 감고 풀면서 물리를 타라.</p>
+      <div class="desktop-help">
+        <span>WASD 이동</span><span>마우스 시점</span><span>LMB / RMB 좌·우 웹</span>
+        <span>Q / E 감기·풀기</span><span>F 웹집</span><span>R 포인트 런치</span><span>X 슬링샷</span>
+      </div>
+      <div class="touch-help">왼쪽 스틱 이동 · 오른쪽 화면 드래그 시점 · L/R WEB 독립 발사</div>
+      <button id="start-btn">ENTER ACADEMY</button>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
