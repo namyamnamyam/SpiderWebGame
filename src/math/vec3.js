@@ -1,0 +1,12 @@
+export const v3 = (x=0,y=0,z=0) => ({x,y,z});
+export const add = (a,b) => ({x:a.x+b.x,y:a.y+b.y,z:a.z+b.z});
+export const sub = (a,b) => ({x:a.x-b.x,y:a.y-b.y,z:a.z-b.z});
+export const scale = (a,s) => ({x:a.x*s,y:a.y*s,z:a.z*s});
+export const dot = (a,b) => a.x*b.x+a.y*b.y+a.z*b.z;
+export const lenSq = a => dot(a,a);
+export const length = a => Math.sqrt(lenSq(a));
+export const normalize = a => { const l=length(a); return l>1e-9?scale(a,1/l):v3(); };
+export const cross = (a,b) => ({x:a.y*b.z-a.z*b.y,y:a.z*b.x-a.x*b.z,z:a.x*b.y-a.y*b.x});
+export const clamp = (n,min,max) => Math.max(min,Math.min(max,n));
+export const mix = (a,b,t) => a+(b-a)*t;
+export const isFiniteVec = a => Number.isFinite(a.x)&&Number.isFinite(a.y)&&Number.isFinite(a.z);
